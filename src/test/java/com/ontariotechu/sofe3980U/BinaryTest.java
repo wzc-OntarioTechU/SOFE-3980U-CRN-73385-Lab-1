@@ -118,4 +118,155 @@ public class BinaryTest
 		Binary binary3=Binary.add(binary1,binary2);
         assertTrue( binary3.getValue().equals("0"));
     }
+    
+    /**
+     * Test the or function with two zeros
+     */
+    @Test
+    public void or1() {
+    	Binary bin1 = new Binary("0");
+    	Binary bin2 = new Binary("0");
+    	Binary bin3 = Binary.or(bin1, bin2);
+    	assertTrue(bin3.getValue().equals("0"));
+    }
+    /**
+     * Test the or function with two ones
+     */
+    @Test
+    public void or2() {
+    	Binary bin1 = new Binary("1");
+    	Binary bin2 = new Binary("1");
+    	Binary bin3 = Binary.or(bin1, bin2);
+    	assertTrue(bin3.getValue().equals("1"));
+    }
+    /**
+     * Test the or function with a one and a zero
+     */
+    @Test
+    public void or3() {
+    	Binary bin1 = new Binary("0");
+    	Binary bin2 = new Binary("1");
+    	Binary bin3 = Binary.or(bin1, bin2);
+    	assertTrue(bin3.getValue().equals("1"));
+    }
+    /**
+     * Test the or function with a longer string of ones and zeros
+     */
+    @Test
+    public void or4() {
+    	Binary bin1 = new Binary("0100101");
+    	Binary bin2 = new Binary("0110010");
+    	Binary bin3 = Binary.or(bin1, bin2);
+    	assertTrue(bin3.getValue().equals("110111"));
+    }
+    /**
+     * Test the or function with two strings of ones and zeros of varying length
+     */
+    @Test
+    public void or5() {
+    	Binary bin1 = new Binary("0100101");
+    	Binary bin2 = new Binary("110");
+    	Binary bin3 = Binary.or(bin1, bin2);
+    	assertTrue(bin3.getValue().equals("100111"));
+    }
+    /**
+     * Test the and function with two zeros
+     */
+    @Test
+    public void and1() {
+    	Binary bin1 = new Binary("0");
+    	Binary bin2 = new Binary("0");
+    	Binary bin3 = Binary.and(bin1, bin2);
+    	assertTrue(bin3.getValue().equals("0"));
+    }
+    /**
+     * Test the and function with two ones
+     */
+    @Test
+    public void and2() {
+    	Binary bin1 = new Binary("1");
+    	Binary bin2 = new Binary("1");
+    	Binary bin3 = Binary.and(bin1, bin2);
+    	assertTrue(bin3.getValue().equals("1"));
+    }
+    /**
+     * Test the and function with a one and a zero
+     */
+    @Test
+    public void and3() {
+    	Binary bin1 = new Binary("0");
+    	Binary bin2 = new Binary("1");
+    	Binary bin3 = Binary.and(bin1, bin2);
+    	assertTrue(bin3.getValue().equals("0"));
+    }
+    /**
+     * Test the and function with a longer string of ones and zeros
+     */
+    @Test
+    public void and4() {
+    	Binary bin1 = new Binary("0100101");
+    	Binary bin2 = new Binary("0110010");
+    	Binary bin3 = Binary.and(bin1, bin2);
+    	assertTrue(bin3.getValue().equals("100000"));
+    }
+    /**
+     * Test the and function with two strings of ones and zeros of varying length
+     */
+    @Test
+    public void and5() {
+    	Binary bin1 = new Binary("0100101");
+    	Binary bin2 = new Binary("110");
+    	Binary bin3 = Binary.and(bin1, bin2);
+    	assertTrue(bin3.getValue().equals("100"));
+    }
+    /**
+     * Test the multiply function with two zeros
+     */
+    @Test
+    public void multiply1() {
+    	Binary bin1 = new Binary("0");
+    	Binary bin2 = new Binary("0");
+    	Binary bin3 = Binary.multiply(bin1, bin2);
+    	assertTrue(bin3.getValue().equals("0"));
+    }
+    /**
+     * Test the multiply function with two ones
+     */
+    @Test
+    public void multiply2() {
+    	Binary bin1 = new Binary("1");
+    	Binary bin2 = new Binary("1");
+    	Binary bin3 = Binary.multiply(bin1, bin2);
+    	assertTrue(bin3.getValue().equals("1"));
+    }
+    /**
+     * Test the multiply function with a one and a zero
+     */
+    @Test
+    public void multiply3() {
+    	Binary bin1 = new Binary("0");
+    	Binary bin2 = new Binary("1");
+    	Binary bin3 = Binary.multiply(bin1, bin2);
+    	assertTrue(bin3.getValue().equals("0"));
+    }
+    /**
+     * Test the multiply function with a longer string of ones and zeros
+     */
+    @Test
+    public void multiply4() {
+    	Binary bin1 = new Binary("0100101");
+    	Binary bin2 = new Binary("0110010");
+    	Binary bin3 = Binary.multiply(bin1, bin2);
+    	assertTrue(bin3.getValue().equals("11100111010"));
+    }
+    /**
+     * Test the multiply function with two strings of ones and zeros of varying length
+     */
+    @Test
+    public void multiply5() {
+    	Binary bin1 = new Binary("0100101");
+    	Binary bin2 = new Binary("110");
+    	Binary bin3 = Binary.multiply(bin1, bin2);
+    	assertTrue(bin3.getValue().equals("11011110"));
+    }
 }
